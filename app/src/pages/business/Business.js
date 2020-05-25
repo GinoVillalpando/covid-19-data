@@ -27,16 +27,16 @@ export const Business = ({business,behaviors, votes}) => {
 		
 			
 			<Card className="my-5 border border-dark alternate-bg ml-5 ">
-			<CardMedia
-			component = "img"
-			height="150"
-			width="150"
-			 img={business.businessAvatar} 
-				 title="business photo"
-			 />
-				<Card.Title>{business.businessName}</Card.Title>
+				<div className ="row d-flex-column"> 
+					<a className="ml-5 p-2 align-self-center" href={business.businessUrl}> 
+						<Card.Title className="ml-5 p-2 align-self-center">{business.businessName}</Card.Title>
+					</a>
+				</div>
+				<CardMedia className="align-self-center">
+					<img height="300" width="350" src={business.businessAvatar} alt="business"/> 
+				</CardMedia>
 
-				<a href={business.businessUrl}>Yelp Link for business</a>
+				<a href={business.businessUrl} class="d-flex justify-content-center align-items-center">Yelp Link for business</a>
 				<Card.Body className="row my-3 px-5">
 				<div className="col-4 pt-5" style={{width:25}}>
 					<BehaviorPost behaviorBusinessId = {business.businessId}/>

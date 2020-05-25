@@ -4,10 +4,10 @@ import Form from "react-bootstrap/Form";
 // import FormControl from "react-bootstrap/FormControl";
 
 export const SearchFormContent = ({setSearchWord}) => {
-		 const setSearch = (e) => {
-		 	e.preventDefault();
+		 const setSearch = (event) => {
+		 	event.preventDefault();
 		 	//check the input field for which characters are being entered and set them as the search term
-		 	setSearchWord(e.target.value);
+		 	setSearchWord(event.target.value);
 };
 
 	return (
