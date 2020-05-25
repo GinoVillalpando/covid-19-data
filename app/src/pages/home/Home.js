@@ -27,7 +27,7 @@ export const Home= () => {
 	const votes = useSelector(state => state.votes ? state.votes : [])
 
 	const filterBusiness = businessState.filter(
-		businesses => businesses.businessName.includes(searchWord) || businesses.businessUrl.includes(searchWord)
+		businesses => businesses.businessName.toLowerCase().includes(searchWord) || businesses.businessUrl.toLowerCase().includes(searchWord)
 	);
 
 	// use dispatch from redux to dispatch actions
