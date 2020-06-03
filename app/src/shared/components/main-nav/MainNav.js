@@ -1,16 +1,26 @@
-import React from "react";
+import React, {useState} from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import {LinkContainer} from "react-router-bootstrap";
 import {Form, FormControl, Button} from "react-bootstrap";
 import {SignUpModal} from "./sign-up/SignUpModal";
 import {SignInModal} from "./sign-in/SignInModal";
+import { SearchFormContent } from "../SearchForm/SearchForm";
 //import {BehaviorList} from "../../../pages/behavior/BehaviorList";
 //import {Profile} from "../../../pages/profile/Profile"
  
 
 
 export const MainNav = (props) => {
+
+	const [searchWord, setSearchWord] = useState('');
+
+	const setSearch = (e) => {
+		e.preventDefault();
+		//check the input field for which characters are being entered and set them as the search term
+		setSearchTerm(e.target.value);
+	};
+	
 	return(
 		<Navbar bg="primary" variant="dark">
 			<LinkContainer exact to="/" >
@@ -29,12 +39,7 @@ export const MainNav = (props) => {
 			{/*<label htmlFor="search">Search by Business Name</label>*/}
 			{/*<input type="text" value ={props.inputValue} onChange={props.businessFilterOnChange}/>*/}
 
-			<Form inline>
-				<FormControl type="text" placeholder="Search" className="mr-sm-2" />
-			</Form>
-			<Form inline>
-				<Button variant="outline-info">Search</Button>
-			</Form>
+			<SearchFormContent searchWord={searchWord} setSearchWord={setSearchWord} onChange={setSearch}/>
 		</Navbar>
 	)
 };

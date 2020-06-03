@@ -17,7 +17,7 @@ import {getAllVotes} from "../../shared/actions/get-votes";
 import Navbar from "react-bootstrap/Navbar";
 import { SearchFormContent } from '../../shared/components/SearchForm/SearchForm';
 
-export const Home= () => {
+export const Home = () => {
 
 	const [searchWord, setSearchWord] = useState('');
 
@@ -56,7 +56,7 @@ export const Home= () => {
 	return (
 		<main className="container">
 			<Navbar bg="white" variant="dark">
-				<SearchFormContent searchWord={searchWord} setSearchWord={setSearchWord}/>
+				<SearchFormContent search={searchWord} setSearchWord={setSearchWord}/>
 			</Navbar>
 
 			{
